@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио Рафис Нигматуллин</title>
     <style>
+    .video-container {
+        max-width: 800px;
+        margin: 20px auto;
+        width: 100%;
+    }
+    .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
+
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -97,10 +110,13 @@
             </ul>
             <p><strong>Результат:</strong> Устойчивая работа системы под нагрузкой.</p>
 
-            <video width="640" height="360" controls style="margin-top: 20px;">
-  <source src="aktovy-zal.mp4" type="video/mp4">
-  Ваш браузер не поддерживает видео.
-</video>
+            <div class="video-container">
+  <video controls>
+    <source src="aktovy-zal.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+  </video>
+</div>
+
 
             
             <div class="divider"></div>
