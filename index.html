@@ -52,10 +52,11 @@
     main {
       padding: 20px;
     }
-    section {
-      margin-bottom: 40px;
-      padding-top: 60px; /* Добавляем отступ для секций */
-    }
+   section {
+  margin-bottom: 40px;
+  padding-top: 120px; /* Это обеспечит запас при скролле, чтобы заголовок всегда попадал в видимую зону */
+}
+
     h1 {
       font-size: 24px;
       margin: 0;
@@ -187,6 +188,8 @@
         <li>Настройка видеорегистратора и удаленного доступа для операторов.</li>
       </ul>
       <p><strong>Результат:</strong> Повышение безопасности и улучшение информационного сопровождения прихожан.</p>
+   <!-- создаёт буфер между последним проектом и контактами -->
+<div style="margin-bottom: 100px;"></div>
     </section>
 
     <section id="contacts">
@@ -198,27 +201,30 @@
   </main>
 
   <script>
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-    window.addEventListener('scroll', () => {
-      let current = "";
+  window.addEventListener('scroll', () => {
+    let current = "";
+    let scrollY = window.scrollY;
 
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(current)) {
-          link.classList.add("active");
-        }
-      });
+    sections.forEach(section => {
+      const offset = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollY >= offset - 200 && scrollY < offset + height - 100) {
+        current = section.getAttribute("id");
+      }
     });
-  </script>
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>
