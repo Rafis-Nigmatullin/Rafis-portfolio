@@ -207,14 +207,21 @@
   window.addEventListener('scroll', () => {
     let current = "";
     let scrollY = window.scrollY;
+    const bottomOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
 
     sections.forEach(section => {
       const offset = section.offsetTop;
       const height = section.offsetHeight;
+
       if (scrollY >= offset - 200 && scrollY < offset + height - 100) {
         current = section.getAttribute("id");
       }
     });
+
+    // Если доскроллил до самого низа страницы — активируем "Контакты"
+    if (bottomOfPage) {
+      current = "contacts";
+    }
 
     navLinks.forEach(link => {
       link.classList.remove("active");
@@ -224,6 +231,7 @@
     });
   });
 </script>
+
 
 
 </body>
