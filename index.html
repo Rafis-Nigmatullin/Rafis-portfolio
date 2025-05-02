@@ -265,7 +265,7 @@
       const offset = section.offsetTop;
       const height = section.offsetHeight;
 
-    if (scrollY >= offset - 300 && scrollY < offset + height - 50) {
+      if (scrollY >= offset - 100 && scrollY < offset + height - 50) {
         current = section.getAttribute("id");
       }
     });
@@ -277,14 +277,12 @@
 
     navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) {
+      if (link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
       }
     });
   });
 </script>
-
-
 
 </body>
 </html>
