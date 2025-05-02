@@ -251,20 +251,20 @@
 
   </main>
 
-  <script>
+ <script>
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('nav a');
 
   window.addEventListener('scroll', () => {
     let current = "";
     let scrollY = window.scrollY;
-    const bottomOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+    const bottomOfPage = window.innerHeight + scrollY >= document.body.offsetHeight - 5;
 
     sections.forEach(section => {
       const offset = section.offsetTop;
       const height = section.offsetHeight;
 
-      if (scrollY >= offset - 600 && scrollY < offset + height - 100) {
+      if (scrollY >= offset - 150 && scrollY < offset + height - 150) {
         current = section.getAttribute("id");
       }
     });
@@ -274,14 +274,20 @@
       current = "contacts";
     }
 
+    // Если ничего не определено — по умолчанию "about"
+    if (!current) {
+      current = "about";
+    }
+
     navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href").includes(current)) {
+      if (link.getAttribute("href").substring(1) === current) {
         link.classList.add("active");
       }
     });
   });
 </script>
+
 
 
 
