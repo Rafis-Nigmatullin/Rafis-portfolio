@@ -297,16 +297,13 @@
   document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      const headerOffset = 100; // высота твоей шапки
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      const id = this.getAttribute('href').substring(1);
+      const target = document.getElementById(id);
+      if (target) {
+        const yOffset = -120; // высота шапки
+        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     });
   });
 </script>
