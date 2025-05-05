@@ -263,44 +263,36 @@
   </main>
 
   <script>
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
 
-  const projectArticles = document.querySelectorAll(".project-item");
-  const projectLinks = document.querySelectorAll("#project-links a");
+  window.addEventListener('scroll', () => {
+    let current = "";
+    let scrollY = window.scrollY;
+    const bottomOfPage = window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
 
-  window.addEventListener("scroll", () => {
-    let currentSection = "";
-    sections.forEach((section) => {
-      if (pageYOffset >= section.offsetTop - 130) {
-        currentSection = section.getAttribute("id");
+    sections.forEach(section => {
+      const offset = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (scrollY >= offset - 100 && scrollY < offset + height - 50) {
+        current = section.getAttribute("id");
       }
     });
 
-    navLinks.forEach((link) => {
+    // Если доскроллил до самого низа страницы — активируем "Контакты"
+    if (bottomOfPage) {
+      current = "contacts";
+    }
+
+    navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentSection}`) {
-        link.classList.add("active");
-      }
-    });
-
-    // Для подсветки ссылок на проекты
-    let currentProject = "";
-    projectArticles.forEach((project) => {
-      if (pageYOffset >= project.offsetTop - 140) {
-        currentProject = project.getAttribute("id");
-      }
-    });
-
-    projectLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === `#${currentProject}`) {
+      if (link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
       }
     });
   });
 </script>
-
 
 </body>
 </html>
