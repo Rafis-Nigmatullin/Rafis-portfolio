@@ -52,19 +52,14 @@
     main {
       padding: 20px;
     }
-     /* Добавляем отступ сверху для секций */
-  section {
-    padding-top: 120px; /* Размер шапки + небольшой запас */
-    position: relative;
-  }
    section::before {
   content: "";
   display: block;
-  height: 200px; /* высота твоего header */
-  margin-top: -200px;
+  height: 100px; /* высота header + запас */
+  margin-top: -100px;
   visibility: hidden;
-  pointer-events: none;
 }
+
 
     h1 {
       font-size: 24px;
@@ -184,7 +179,7 @@
      
        <div style="height: 90px;"></div>
        <div id="centralmosque" class="project-item">
-  <h2 class="scroll-mt-32 central-mosque">Центральная мечеть, г. Альметьевск</h2>
+  <h2 class="central-mosque">Центральная мечеть, г. Альметьевск</h2>
 
       </div>
        <img src="Main_view.jpg" alt="Main view of the project" style="max-width: 100%; height: auto; border-radius: 12px; margin-bottom: 1rem;">
@@ -295,23 +290,6 @@
       if (link.getAttribute("href") === `#${current}`) {
         link.classList.add("active");
       }
-    });
-  });
-</script>
-<script>
-  document.querySelectorAll('header a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const target = document.getElementById(targetId);
-      const headerOffset = 100; // высота твоей шапки
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
     });
   });
 </script>
