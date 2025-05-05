@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+ <style>
+    .project-links a {
+      display: block;               /* Каждая ссылка с новой строки */
+      margin-bottom: 10px;          /* Отступ между ссылками */
+      color: #4db8ff;               /* Цвет текста */
+      font-weight: bold;           /* Жирный текст */
+      text-decoration: none;       /* Без подчёркивания, по желанию */
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;  /* Добавим подчёркивание при наведении */
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Портфолио Рафис Нигматуллин</title>
@@ -134,10 +147,9 @@
 
     <section id="projects">
       <h2>Проекты</h2>
-      <div id="projects" style="background-color: #2c2c2c; padding: 15px 20px; border-radius: 8px; margin-top: 20px; margin-bottom: 20px;">
- <!-- <span style="font-weight: bold; color: #ccc; margin-right: 10px;">Проекты:</span>-->
-  <a href="#mosgorgeotrest" style="margin-right: 20px; color: #4db8ff; font-weight: bold;">Мосгоргеотрест;</a>
-  <a href="#centralmosque" style="color: #4db8ff; font-weight: bold;">Центральная мечеть</a>
+     <div class="project-links">
+  <a href="#mosgorgeotrest">Мосгоргеотрест</a>
+  <a href="#centralmosque">Центральная мечеть</a>
 </div>
      
        
