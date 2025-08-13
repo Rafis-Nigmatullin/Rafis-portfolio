@@ -158,8 +158,30 @@
     }
    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
    img{max-width:100%;height:auto;display:block;}
-   /* Медиа не шире родителя */
-   img, video { max-width:100%; height:auto; display:block; }
+   .video-container{
+  max-width:800px;
+  width:100%;
+  margin:20px auto;
+  overflow:hidden;
+  border-radius:12px;
+}
+.video-container video{ width:100%; height:auto; display:block; }
+
+.container{max-width:1100px;margin:0 auto;padding:0 20px;}
+
+/* Медиа не шире родителя (достаточно одного общего правила) */
+img, video { max-width:100%; height:auto; display:block; }
+
+/* --- Портретные медиа: аккуратно на десктопе --- */
+.video-container--portrait video,
+.img-portrait{
+  max-height:85vh;
+  object-fit:contain;
+}
+@media (min-width: 992px){
+  .video-container--portrait{ max-width:520px; margin:20px auto; }
+  .img-portrait{ max-width:520px; margin-left:auto; margin-right:auto; display:block; }
+}
 
   </style>
 </head>
