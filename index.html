@@ -97,13 +97,15 @@
     main {
       padding: 20px;
     }
-  main > section[id]::before {
+ main > section[id]::before,
+#projects > section[id]::before {
   content:"";
   display:block;
   height:100px;
   margin-top:-100px;
   visibility:hidden;
 }
+
 
 
 
@@ -151,20 +153,9 @@
   border-radius:12px; /* аккуратные углы, опционально */
 }
 
-    .video-container video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    
    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
-   img{max-width:100%;height:auto;display:block;}
-   .video-container{
-  max-width:800px;
-  width:100%;
-  margin:20px auto;
-  overflow:hidden;
-  border-radius:12px;
-}
+    
 .video-container video{ width:100%; height:auto; display:block; }
 
 .container{max-width:1100px;margin:0 auto;padding:0 20px;}
@@ -263,10 +254,10 @@ img, video { max-width:100%; height:auto; display:block; }
         <p style="font-size: 14px; color: #aaa; margin-top: 8px;">🎬 Видео: Обслуживание ЖК-панели в лифтовом холле</p>
       </div>
 
-     
+     </section>
        <section id="centralmosque">
-       <div style="height: 60px;"></div>
-       <div id="centralmosque" class="project-item">
+  <div class="project-item">
+
         <strong style="display: block; margin-bottom: 0.5rem;">Центральная мечеть, г. Альметьевск</strong>
  
        <img src="Main_view.jpg" alt="Main view of the project" style="max-width: 100%; height: auto; border-radius: 12px; margin-bottom: 1rem;">
@@ -449,6 +440,9 @@ img, video { max-width:100%; height:auto; display:block; }
       }
     });
   });
+
+   window.dispatchEvent(new Event('scroll'));
+
 </script>
 <p><em>Портфолио находится в разработке — я постепенно добавляю проекты и дорабатываю содержание. Спасибо за интерес!</em></p>
 </body>
