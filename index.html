@@ -144,10 +144,13 @@
       border-top: 1px solid #555;
     }
     .video-container {
-      max-width: 800px;   
-      margin: 20px 0;
-      width: 100%;
-    }
+  max-width:800px;
+  width:100%;
+  margin:20px auto;   /* центрируем */
+  overflow:hidden;    /* обрежет, если что-то полезет наружу */
+  border-radius:12px; /* аккуратные углы, опционально */
+}
+
     .video-container video {
       width: 100%;
       height: auto;
