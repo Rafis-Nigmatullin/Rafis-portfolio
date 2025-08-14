@@ -57,9 +57,15 @@
       background:#1b1b1b;
       border-radius:12px;
     }
-    .video-container--portrait video{
-      border-radius:8px;
-    }
+   .video-container--portrait video{
+    border-radius:8px;
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;      /* вписываем без обрезки */
+    object-position:center;  /* центрируем постер/кадр */
+    background:#000;         /* если будут поля — они чёрные и симметричные */
+  }
     /* То же для вертикальных картинок */
     .img-portrait{
       border:1px solid #3a3a3a;
