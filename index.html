@@ -2,6 +2,28 @@
 <html lang="ru">
 <head>
  <style>
+@media (max-width: 991px){
+  .video-container--portrait{
+    border:1px solid #3a3a3a;
+    padding:6px;
+    background:#1b1b1b;
+    border-radius:12px;
+  }
+
+  .video-container--portrait video{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:8px;
+    object-fit:contain;      /* вписать без обрезки */
+    object-position:center;  /* центр по горизонтали и вертикали */
+    background:#000;         /* симметричные поля */
+    aspect-ratio: 9 / 16;    /* фиксируем вертикальные пропорции */
+  }
+}
+</style>
+
+ <style>
     .project-links a {
       display: block;               /* Каждая ссылка с новой строки */
       margin-bottom: 10px;          /* Отступ между ссылками */
