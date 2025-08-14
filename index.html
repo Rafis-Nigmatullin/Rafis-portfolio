@@ -47,7 +47,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Портфолио Рафис Нигматуллин</title>
-  
+  <!-- ВСТАВЬ СЮДА — как отдельный блок стилей -->
+<style>
+  /* Рамка и фон для вертикальных видео только на телефонах */
+  @media (max-width: 991px){
+    .video-container--portrait{
+      border:1px solid #3a3a3a;
+      padding:6px;
+      background:#1b1b1b;
+      border-radius:12px;
+    }
+    .video-container--portrait video{
+      border-radius:8px;
+    }
+    /* То же для вертикальных картинок */
+    .img-portrait{
+      border:1px solid #3a3a3a;
+      padding:6px;
+      background:#1b1b1b;
+      border-radius:12px;
+    }
+  }
+</style>
  
   <style>
     html {
